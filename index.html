@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>choose top five</title>
+<!-- tailwind CSS CDN file linked  -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@
     </header>
     <!-- main section  -->
     <main class="bg-gray-900 ">
-        <section class="flex flex-col sm:flex-row  gap-8 p-8 mx-auto w-11/12 border-2 border-amber-600">
+        <section class="flex flex-col sm:flex-row  gap-8 p-8 mx-auto w-11/12 ">
     <!-- player display section  -->
             <section class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-1 gap-4 basis-4/5 ">
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -23,7 +24,7 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-one" class="text-3xl sm:text-2xl font-semibold ">Sergio Agüero</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-one')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full ">SELECT</button>
+                        <button id="select-btn-one" onclick="playerSelection('player-one', 'select-btn-one')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full ">SELECT</button>
                     </div>
                 </div>
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -31,7 +32,7 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-two" class="text-3xl sm:text-2xl font-semibold">Kylian Mbappé</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-two')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
+                        <button id="select-btn-two" onclick="playerSelection('player-two', 'select-btn-two')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
                     </div>
                 </div>
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -39,7 +40,7 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-three" class="text-3xl sm:text-2xl font-semibold">Lionel Messi</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-three')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
+                        <button id="select-btn-three" onclick="playerSelection('player-three', 'select-btn-three')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
                     </div>
                 </div>
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -47,7 +48,7 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-four" class="text-3xl sm:text-2xl font-semibold">Neymar Jr.</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-four')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
+                        <button id="select-btn-four" onclick="playerSelection('player-four', 'select-btn-four')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
                     </div>
                 </div>
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -55,7 +56,7 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-five" class="text-3xl sm:text-2xl font-semibold">Sadio Mané</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-five')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
+                        <button id="select-btn-five" onclick="playerSelection('player-five', 'select-btn-five')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
                     </div>
                 </div>
                 <div class="bg-black border-2 border-gray-500 rounded text-white h-fit ">
@@ -63,11 +64,11 @@
                     <div class="flex flex-col justify-center items-center p-4 ">
                         <h1 id="player-six" class="text-3xl sm:text-2xl font-semibold">Mohamed Salah</h1>
                         <p class="mb-4 mt-2">30 Goals <span class="mx-1">/</span> 120 Assist</p>
-                        <button onclick="playerSelection('player-six')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
+                        <button id="select-btn-six" onclick="playerSelection('player-six', 'select-btn-six')" class="bg-blue-700 text-white px-6 py-2 mx-auto my-4 w-full">SELECT</button>
                     </div>
                 </div>
             </section>
-    <!-- side bar section ---------------- -->
+    <!-- side bar section start ---------------- -->
             <aside class="flex flex-col basis-1/5 gap-4 h-fit ">
     <!-- selected player's name displaye section  -->
                 <div class="text-white bg-black p-4 ">
@@ -76,11 +77,6 @@
                         <img class="mx-auto " src="images/under-line.png" alt="">
                     </div>
                     <ol id="player-name-list" class="list-decimal list-inside my-4 mx-auto ">
-                        <!-- <li>Player Name</li>
-                        <li>Player Name</li>
-                        <li>Player Name</li>
-                        <li>Player Name</li>
-                        <li>Player Name</li> -->
                     </ol>
                 </div>
     <!-- Budget calculation section  -->
@@ -94,7 +90,7 @@
                             <span class=" mr-2">Per Player</span>
                             <input id="per-player-cost-input-iield" class="bg-black border-2 border-white px-2 py-2 w-32 " type="text" name="" >
                         </div>
-                        <button id="calculate-btn" class="bg-blue-400 text-white px-6 py-2 mx-auto w-full">Calculate</button>
+                        <button id="calculate-btn" class="bg-blue-700 text-white px-6 py-2 mx-auto w-full">Calculate</button>
                     </div>
                     <div class=" my-8">
                         <div class="flex flex-row justify-between my-4">
@@ -109,7 +105,7 @@
                             <span class=" ">Coach</span>
                             <input id="coach-cost-input-field" class="bg-black border-2 border-white px-2 py-2 w-32 " type="text" name="" >
                         </div>
-                        <button id="calculate-total-btn" class="bg-blue-400 text-white px-6 py-2 w-full">Calculate Total</button>
+                        <button id="calculate-total-btn" class="bg-blue-700 text-white px-6 py-2 w-full">Calculate Total</button>
                     </div>
                     <div class="flex flex-row justify-between">
                         <p>Total</p>
@@ -120,9 +116,11 @@
         </section>
     </main>
     <hr>
+<!-- footer section start  -->
     <footer class="bg-gray-900 py-16 text-white text-center">
         <p class="text-xl">Cpyright @ 2022 All Rights Reserved.</p>
     </footer>
+<!-- javascript file linked  -->
     <script src="js/utilities.js"></script>
     <script src="js/app.js"></script>
 </body>

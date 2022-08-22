@@ -1,20 +1,23 @@
-function playerSelection(name){
-    const playerName = document.getElementById(name);
-    const getPlayerName = playerName.innerText;
-    console.log(getPlayerName);
+// function for getting a player name from the player display and setting it on the list item.
+function playerSelection(name, button){
+    const getPlayerName = document.getElementById(name);
+    const playerName = getPlayerName.innerText;
 
     const nameList = document.getElementById('player-name-list');
     const creatListItem = document.createElement('li');
-    
+ 
+// list item validation and calculation section.
     if(nameList.children.length < 5){
-        creatListItem.innerText = getPlayerName;
+        creatListItem.innerText = playerName;
         nameList.appendChild(creatListItem);
     }else{
         return alert('You cannot select more then 5 players')
     };
 
-    console.log(nameList.children.length)
-
+// selected button disable after clicked.
+    const selectedButton = document.getElementById(button);
+    selectedButton.setAttribute('disabled', true);
+    selectedButton.style.backgroundColor = '#778899';
 };
 
 // function for getting value from input field. 
