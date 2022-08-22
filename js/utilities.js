@@ -6,7 +6,7 @@ function playerSelection(name, button){
     const nameList = document.getElementById('player-name-list');
     const creatListItem = document.createElement('li');
  
-// list item validation and calculation section.
+    // list item validation and calculation section.
     if(nameList.children.length < 5){
         creatListItem.innerText = playerName;
         nameList.appendChild(creatListItem);
@@ -14,7 +14,7 @@ function playerSelection(name, button){
         return alert('You cannot select more then 5 players')
     };
 
-// selected button disable after clicked.
+    // selected button disable after clicked.
     const selectedButton = document.getElementById(button);
     selectedButton.setAttribute('disabled', true);
     selectedButton.style.backgroundColor = '#778899';

@@ -4,7 +4,7 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     const nameListLength = nameList.children.length;
     const playerCostInputFieldValue = getInputFieldValue('per-player-cost-input-iield');
 
-// input value validation and calculation section
+    // input value validation and calculation section
     if(isNaN(playerCostInputFieldValue)){
         return alert('Please enter numeric value');
     }else if(playerCostInputFieldValue >= 0){
@@ -21,7 +21,7 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
     const managerCostInputFieldValue = getInputFieldValue('manager-cost-input-field');
     const coachCostInputFieldValue = getInputFieldValue('coach-cost-input-field');
 
-// input value validation and calculation section 
+    // input value validation and calculation section 
     if(isNaN(managerCostInputFieldValue && coachCostInputFieldValue)){
         return alert('Please enter numeric value')
     }else if(managerCostInputFieldValue >= 0 && coachCostInputFieldValue >= 0){
